@@ -1,0 +1,403 @@
+{
+    "name": "projects/882957723071/locations/us-west1/integrations/MashUp/versions/f28cfe36-d9fa-4ba0-940d-4328ad14fa2f",
+    "updateTime": "2024-03-16T18:02:01.380Z",
+    "lockHolder": "ssvaidyanathan@google.com",
+    "createTime": "2024-03-16T17:57:26.488Z",
+    "lastModifierEmail": "ssvaidyanathan@google.com",
+    "triggerConfigs": [{
+      "label": "API Trigger",
+      "startTasks": [{
+        "taskId": "1"
+      }],
+      "properties": {
+        "Trigger name": "MashUp_API_1"
+      },
+      "triggerType": "API",
+      "triggerNumber": "1",
+      "triggerId": "api_trigger/MashUp_API_1",
+      "position": {
+        "x": -210
+      }
+    }],
+    "taskConfigs": [{
+      "task": "GenericRestV2Task",
+      "taskId": "1",
+      "parameters": {
+        "throwError": {
+          "key": "throwError",
+          "value": {
+            "booleanValue": true
+          }
+        },
+        "responseBody": {
+          "key": "responseBody",
+          "value": {
+            "stringArray": {
+              "stringValues": ["$`Task_1_responseBody`$"]
+            }
+          }
+        },
+        "disableSSLValidation": {
+          "key": "disableSSLValidation",
+          "value": {
+            "booleanValue": false
+          }
+        },
+        "httpParams": {
+          "key": "httpParams",
+          "value": {
+          }
+        },
+        "authConfigName": {
+          "key": "authConfigName",
+          "value": {
+            "stringValue": ""
+          }
+        },
+        "responseHeader": {
+          "key": "responseHeader",
+          "value": {
+            "stringArray": {
+              "stringValues": ["$`Task_1_responseHeader`$"]
+            }
+          }
+        },
+        "userAgent": {
+          "key": "userAgent",
+          "value": {
+            "stringValue": ""
+          }
+        },
+        "httpMethod": {
+          "key": "httpMethod",
+          "value": {
+            "stringValue": "GET"
+          }
+        },
+        "responseStatus": {
+          "key": "responseStatus",
+          "value": {
+            "stringArray": {
+              "stringValues": ["$`Task_1_responseStatus`$"]
+            }
+          }
+        },
+        "url": {
+          "key": "url",
+          "value": {
+            "stringValue": "https://maps.googleapis.com/maps/api/geocode/json"
+          }
+        },
+        "useSSL": {
+          "key": "useSSL",
+          "value": {
+            "booleanValue": false
+          }
+        },
+        "urlFetchingService": {
+          "key": "urlFetchingService",
+          "value": {
+            "stringValue": "HARPOON"
+          }
+        },
+        "urlQueryStrings": {
+          "key": "urlQueryStrings",
+          "value": {
+            "jsonValue": "{\n  \"@type\": \"type.googleapis.com/enterprise.crm.eventbus.proto.ParameterMap\",\n  \"entries\": [{\n    \"key\": {\n      \"literalValue\": {\n        \"stringValue\": \"address\"\n      }\n    },\n    \"value\": {\n      \"referenceKey\": \"$address$\"\n    }\n  }, {\n    \"key\": {\n      \"literalValue\": {\n        \"stringValue\": \"key\"\n      }\n    },\n    \"value\": {\n      \"referenceKey\": \"$key$\"\n    }\n  }]\n}"
+          }
+        },
+        "requestorId": {
+          "key": "requestorId",
+          "value": {
+            "stringValue": ""
+          }
+        },
+        "requestBody": {
+          "key": "requestBody",
+          "value": {
+            "stringValue": ""
+          }
+        },
+        "followRedirects": {
+          "key": "followRedirects",
+          "value": {
+            "booleanValue": true
+          }
+        },
+        "additionalHeaders": {
+          "key": "additionalHeaders"
+        }
+      },
+      "nextTasks": [{
+        "taskId": "2"
+      }],
+      "taskExecutionStrategy": "WHEN_ALL_SUCCEED",
+      "displayName": "Geocoding API",
+      "externalTaskType": "NORMAL_TASK",
+      "position": {
+        "x": -210,
+        "y": 126
+      }
+    }, {
+      "task": "GenericRestV2Task",
+      "taskId": "3",
+      "parameters": {
+        "throwError": {
+          "key": "throwError",
+          "value": {
+            "booleanValue": true
+          }
+        },
+        "responseBody": {
+          "key": "responseBody",
+          "value": {
+            "stringArray": {
+              "stringValues": ["$`Task_3_responseBody`$"]
+            }
+          }
+        },
+        "disableSSLValidation": {
+          "key": "disableSSLValidation",
+          "value": {
+            "booleanValue": false
+          }
+        },
+        "httpParams": {
+          "key": "httpParams"
+        },
+        "authConfigName": {
+          "key": "authConfigName",
+          "value": {
+            "stringValue": ""
+          }
+        },
+        "responseHeader": {
+          "key": "responseHeader",
+          "value": {
+            "stringArray": {
+              "stringValues": ["$`Task_3_responseHeader`$"]
+            }
+          }
+        },
+        "userAgent": {
+          "key": "userAgent",
+          "value": {
+            "stringValue": ""
+          }
+        },
+        "httpMethod": {
+          "key": "httpMethod",
+          "value": {
+            "stringValue": "GET"
+          }
+        },
+        "responseStatus": {
+          "key": "responseStatus",
+          "value": {
+            "stringArray": {
+              "stringValues": ["$`Task_3_responseStatus`$"]
+            }
+          }
+        },
+        "url": {
+          "key": "url",
+          "value": {
+            "stringValue": "https://maps.googleapis.com/maps/api/elevation/json"
+          }
+        },
+        "useSSL": {
+          "key": "useSSL",
+          "value": {
+            "booleanValue": false
+          }
+        },
+        "urlFetchingService": {
+          "key": "urlFetchingService",
+          "value": {
+            "stringValue": "HARPOON"
+          }
+        },
+        "urlQueryStrings": {
+          "key": "urlQueryStrings",
+          "value": {
+            "jsonValue": "{\n  \"@type\": \"type.googleapis.com/enterprise.crm.eventbus.proto.ParameterMap\",\n  \"entries\": [{\n    \"key\": {\n      \"literalValue\": {\n        \"stringValue\": \"key\"\n      }\n    },\n    \"value\": {\n      \"referenceKey\": \"$key$\"\n    }\n  }, {\n    \"key\": {\n      \"literalValue\": {\n        \"stringValue\": \"locations\"\n      }\n    },\n    \"value\": {\n      \"referenceKey\": \"$locations$\"\n    }\n  }]\n}"
+          }
+        },
+        "requestorId": {
+          "key": "requestorId",
+          "value": {
+            "stringValue": ""
+          }
+        },
+        "requestBody": {
+          "key": "requestBody",
+          "value": {
+            "stringValue": ""
+          }
+        },
+        "followRedirects": {
+          "key": "followRedirects",
+          "value": {
+            "booleanValue": true
+          }
+        },
+        "additionalHeaders": {
+          "key": "additionalHeaders"
+        }
+      },
+      "nextTasks": [{
+        "taskId": "4"
+      }],
+      "taskExecutionStrategy": "WHEN_ALL_SUCCEED",
+      "displayName": "Elevation API",
+      "externalTaskType": "NORMAL_TASK",
+      "position": {
+        "x": -210,
+        "y": 378
+      }
+    }, {
+      "task": "FieldMappingTask",
+      "taskId": "4",
+      "parameters": {
+        "FieldMappingConfigTaskParameterKey": {
+          "key": "FieldMappingConfigTaskParameterKey",
+          "value": {
+            "jsonValue": "{\n  \"@type\": \"type.googleapis.com/enterprise.crm.eventbus.proto.FieldMappingConfig\",\n  \"mappedFields\": [{\n    \"inputField\": {\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$`Task_3_responseBody`$\"\n        },\n        \"transformationFunctions\": [{\n          \"functionType\": {\n            \"stringFunction\": {\n              \"functionName\": \"TO_JSON\"\n            }\n          }\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"results\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_ELEMENT\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"intValue\": \"0\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"elevation\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"TO_DOUBLE\"\n            }\n          }\n        }]\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$elevation$\",\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }]\n}"
+          }
+        }
+      },
+      "nextTasks": [{
+        "taskId": "5"
+      }],
+      "taskExecutionStrategy": "WHEN_ALL_SUCCEED",
+      "displayName": "Extract Elevation",
+      "externalTaskType": "NORMAL_TASK",
+      "position": {
+        "x": -210,
+        "y": 504
+      }
+    }, {
+      "task": "FieldMappingTask",
+      "taskId": "2",
+      "parameters": {
+        "FieldMappingConfigTaskParameterKey": {
+          "key": "FieldMappingConfigTaskParameterKey",
+          "value": {
+            "jsonValue": "{\n  \"@type\": \"type.googleapis.com/enterprise.crm.eventbus.proto.FieldMappingConfig\",\n  \"mappedFields\": [{\n    \"inputField\": {\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$`Task_1_responseBody`$\"\n        },\n        \"transformationFunctions\": [{\n          \"functionType\": {\n            \"stringFunction\": {\n              \"functionName\": \"TO_JSON\"\n            }\n          }\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"results\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_ELEMENT\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"intValue\": \"0\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"geometry\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"location\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"lat\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"TO_DOUBLE\"\n            }\n          }\n        }]\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$latitude$\",\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }, {\n    \"inputField\": {\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$`Task_1_responseBody`$\"\n        },\n        \"transformationFunctions\": [{\n          \"functionType\": {\n            \"stringFunction\": {\n              \"functionName\": \"TO_JSON\"\n            }\n          }\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"results\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_ELEMENT\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"intValue\": \"0\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"geometry\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"location\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"lng\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"TO_DOUBLE\"\n            }\n          }\n        }]\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$longitude$\",\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }, {\n    \"inputField\": {\n      \"fieldType\": \"JSON_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$`Task_1_responseBody`$\"\n        },\n        \"transformationFunctions\": [{\n          \"functionType\": {\n            \"stringFunction\": {\n              \"functionName\": \"TO_JSON\"\n            }\n          }\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"results\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_ELEMENT\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"intValue\": \"0\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"formatted_address\"\n              }\n            }\n          }]\n        }]\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$formattedAddress$\",\n      \"fieldType\": \"STRING_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }, {\n    \"inputField\": {\n      \"fieldType\": \"STRING_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$latitude$\"\n        },\n        \"transformationFunctions\": [{\n          \"functionType\": {\n            \"doubleFunction\": {\n              \"functionName\": \"TO_STRING\"\n            }\n          }\n        }, {\n          \"functionType\": {\n            \"stringFunction\": {\n              \"functionName\": \"CONCAT\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \",\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"stringFunction\": {\n              \"functionName\": \"CONCAT\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"referenceValue\": \"$longitude$\"\n            },\n            \"transformationFunctions\": [{\n              \"functionType\": {\n                \"doubleFunction\": {\n                  \"functionName\": \"TO_STRING\"\n                }\n              }\n            }]\n          }]\n        }]\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$locations$\",\n      \"fieldType\": \"STRING_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }]\n}"
+          }
+        }
+      },
+      "nextTasks": [{
+        "taskId": "3"
+      }],
+      "taskExecutionStrategy": "WHEN_ALL_SUCCEED",
+      "displayName": "Extract Latitude/Longitude",
+      "externalTaskType": "NORMAL_TASK",
+      "position": {
+        "x": -210,
+        "y": 252
+      }
+    }, {
+      "task": "FieldMappingTask",
+      "taskId": "5",
+      "parameters": {
+        "FieldMappingConfigTaskParameterKey": {
+          "key": "FieldMappingConfigTaskParameterKey",
+          "value": {
+            "jsonValue": "{\n  \"@type\": \"type.googleapis.com/enterprise.crm.eventbus.proto.FieldMappingConfig\",\n  \"mappedFields\": [{\n    \"inputField\": {\n      \"fieldType\": \"STRING_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$formattedAddress$\"\n        }\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$mashUpResponse.address$\",\n      \"fieldType\": \"STRING_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }, {\n    \"inputField\": {\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$elevation$\"\n        }\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$mashUpResponse.elevation.meters$\",\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }, {\n    \"inputField\": {\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$elevation$\"\n        },\n        \"transformationFunctions\": [{\n          \"functionType\": {\n            \"doubleFunction\": {\n              \"functionName\": \"MULTIPLY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"doubleValue\": 3.2808399\n              }\n            }\n          }]\n        }]\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$mashUpResponse.elevation.feet$\",\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }, {\n    \"inputField\": {\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$latitude$\"\n        }\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$mashUpResponse.location.latitude$\",\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }, {\n    \"inputField\": {\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$longitude$\"\n        }\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$mashUpResponse.location.longitude$\",\n      \"fieldType\": \"DOUBLE_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }]\n}"
+          }
+        }
+      },
+      "taskExecutionStrategy": "WHEN_ALL_SUCCEED",
+      "displayName": "MashUp Response",
+      "externalTaskType": "NORMAL_TASK",
+      "position": {
+        "x": -208,
+        "y": 608
+      }
+    }],
+    "integrationParameters": [{
+      "key": "`Task_1_responseHeader`",
+      "dataType": "STRING_VALUE",
+      "displayName": "`Task_1_responseHeader`",
+      "isTransient": true,
+      "producer": "1_1"
+    }, {
+      "key": "`Task_1_responseBody`",
+      "dataType": "STRING_VALUE",
+      "displayName": "`Task_1_responseBody`",
+      "isTransient": true,
+      "producer": "1_1"
+    }, {
+      "key": "`Task_1_responseStatus`",
+      "dataType": "STRING_VALUE",
+      "displayName": "`Task_1_responseStatus`",
+      "isTransient": true,
+      "producer": "1_1"
+    }, {
+      "key": "key",
+      "dataType": "STRING_VALUE",
+      "defaultValue": {
+        "stringValue": "replace-me"
+      },
+      "displayName": "key",
+      "masked": true
+    }, {
+      "key": "`Task_3_responseHeader`",
+      "dataType": "STRING_VALUE",
+      "displayName": "`Task_3_responseHeader`",
+      "isTransient": true,
+      "producer": "1_3"
+    }, {
+      "key": "`Task_3_responseBody`",
+      "dataType": "STRING_VALUE",
+      "displayName": "`Task_3_responseBody`",
+      "isTransient": true,
+      "producer": "1_3"
+    }, {
+      "key": "`Task_3_responseStatus`",
+      "dataType": "STRING_VALUE",
+      "displayName": "`Task_3_responseStatus`",
+      "isTransient": true,
+      "producer": "1_3"
+    }, {
+      "key": "locations",
+      "dataType": "STRING_VALUE",
+      "displayName": "locations"
+    }, {
+      "key": "latitude",
+      "dataType": "DOUBLE_VALUE",
+      "displayName": "latitude"
+    }, {
+      "key": "longitude",
+      "dataType": "DOUBLE_VALUE",
+      "displayName": "longitude"
+    }, {
+      "key": "elevation",
+      "dataType": "DOUBLE_VALUE",
+      "displayName": "elevation"
+    }, {
+      "key": "mashUpResponse",
+      "dataType": "JSON_VALUE",
+      "displayName": "mashUpResponse",
+      "inputOutputType": "OUT",
+      "jsonSchema": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"elevation\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"feet\": {\n          \"type\": \"number\"\n        },\n        \"meters\": {\n          \"type\": \"number\"\n        }\n      }\n    },\n    \"address\": {\n      \"type\": \"string\"\n    },\n    \"location\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"latitude\": {\n          \"type\": \"number\"\n        },\n        \"longitude\": {\n          \"type\": \"number\"\n        }\n      }\n    }\n  }\n}"
+    }, {
+      "key": "address",
+      "dataType": "STRING_VALUE",
+      "defaultValue": {
+        "stringValue": "94539"
+      },
+      "displayName": "address",
+      "inputOutputType": "IN"
+    }, {
+      "key": "formattedAddress",
+      "dataType": "STRING_VALUE",
+      "displayName": "formattedAddress"
+    }],
+    "cloudLoggingDetails": {
+      "cloudLoggingSeverity": "CLOUD_LOGGING_SEVERITY_UNSPECIFIED",
+      "enableCloudLogging": false
+    },
+    "enableVariableMasking": true
+  }
