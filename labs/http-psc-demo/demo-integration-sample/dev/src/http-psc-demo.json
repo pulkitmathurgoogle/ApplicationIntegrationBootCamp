@@ -1,0 +1,118 @@
+{
+	"description": "DO NOT DELETE\nThis is used for App Integration Workshop\nDemo the HTTP Connector using PSC  for Cloud Run workloads",
+	"snapshotNumber": "1",
+	"triggerConfigs": [
+		{
+			"label": "API Trigger",
+			"triggerType": "API",
+			"triggerNumber": "1",
+			"triggerId": "api_trigger/http-psc-demo_API_1",
+			"startTasks": [
+				{
+					"taskId": "1"
+				}
+			],
+			"properties": {
+				"Trigger name": "http-psc-demo_API_1"
+			}
+		}
+	],
+	"taskConfigs": [
+		{
+			"task": "GenericConnectorTask",
+			"taskId": "1",
+			"parameters": {
+				"actionName": {
+					"key": "actionName",
+					"value": {
+						"stringValue": "HttpRequest"
+					}
+				},
+				"connectionName": {
+					"key": "connectionName",
+					"value": {
+						"stringValue": "projects/PROJECT_ID/locations/REGION/connections/ilb-psc-conn"
+					}
+				},
+				"connectionVersion": {
+					"key": "connectionVersion",
+					"value": {
+						"stringValue": "projects/PROJECT_ID/locations/global/providers/default/connectors/http/versions/1"
+					}
+				},
+				"connectorInputPayload": {
+					"key": "connectorInputPayload",
+					"value": {
+						"stringValue": "$`Task_1_connectorInputPayload`$"
+					}
+				},
+				"connectorOutputPayload": {
+					"key": "connectorOutputPayload",
+					"value": {
+						"stringValue": "$`Task_1_connectorOutputPayload`$"
+					}
+				},
+				"operation": {
+					"key": "operation",
+					"value": {
+						"stringValue": "EXECUTE_ACTION"
+					}
+				}
+			},
+			"displayName": "Connectors",
+			"nextTasks": [
+				{
+					"taskId": "2"
+				}
+			],
+			"taskExecutionStrategy": "WHEN_ALL_SUCCEED",
+			"externalTaskType": "NORMAL_TASK"
+		},
+		{
+			"task": "FieldMappingTask",
+			"taskId": "2",
+			"parameters": {
+				"FieldMappingConfigTaskParameterKey": {
+					"key": "FieldMappingConfigTaskParameterKey",
+					"value": {
+						"jsonValue": "{\n  \"@type\": \"type.googleapis.com/enterprise.crm.eventbus.proto.FieldMappingConfig\",\n  \"mappedFields\": [{\n    \"inputField\": {\n      \"fieldType\": \"JSON_VALUE\",\n      \"transformExpression\": {\n        \"initialValue\": {\n          \"referenceValue\": \"$`Task_1_connectorOutputPayload`$\"\n        },\n        \"transformationFunctions\": [{\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_ELEMENT\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"intValue\": \"0\"\n              }\n            }\n          }]\n        }, {\n          \"functionType\": {\n            \"jsonFunction\": {\n              \"functionName\": \"GET_PROPERTY\"\n            }\n          },\n          \"parameters\": [{\n            \"initialValue\": {\n              \"literalValue\": {\n                \"stringValue\": \"ResponseBody\"\n              }\n            }\n          }]\n        }]\n      }\n    },\n    \"outputField\": {\n      \"referenceKey\": \"$response$\",\n      \"fieldType\": \"STRING_VALUE\",\n      \"cardinality\": \"OPTIONAL\"\n    }\n  }]\n}"
+					}
+				}
+			},
+			"displayName": "Data Mapping",
+			"taskExecutionStrategy": "WHEN_ALL_SUCCEED",
+			"externalTaskType": "NORMAL_TASK"
+		}
+	],
+	"integrationParameters": [
+		{
+			"key": "`Task_1_connectorOutputPayload`",
+			"dataType": "JSON_VALUE",
+			"isTransient": true,
+			"producer": "1_1",
+			"jsonSchema": "{\n  \"type\": \"array\",\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"items\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"ResponseBody\": {\n        \"type\": \"string\",\n        \"description\": \"HTTP response body\"\n      },\n      \"StatusCode\": {\n        \"type\": \"number\",\n        \"description\": \"Status Code received from the HTTP Server\"\n      },\n      \"HttpVersion\": {\n        \"type\": \"string\",\n        \"description\": \"Version negotiated for HTTP Request\"\n      },\n      \"ResponseHeaders\": {\n        \"type\": \"object\",\n        \"description\": \"HTTP response headers. Will consist of (key,value) and (key, list of value) pairs\"\n      }\n    },\n    \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n  }\n}"
+		},
+		{
+			"key": "`Task_1_connectorInputPayload`",
+			"dataType": "JSON_VALUE",
+			"defaultValue": {
+				"jsonValue": "{\n  \"Url\": {\n    \"path\": \"/\"\n  }\n}"
+			},
+			"producer": "1_1",
+			"jsonSchema": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"Url\": {\n      \"type\": [\"object\", \"null\"],\n      \"description\": \"Url object to make request to. Can contain scheme, netloc, path, params, query, fragment in json format. If netloc is provided, it will override the host provided during connection creation\"\n    },\n    \"Method\": {\n      \"type\": [\"string\", \"null\"],\n      \"description\": \"HTTP request method. Eg. GET, POST, DELETE, PUT etc.\",\n      \"default\": \"GET\"\n    },\n    \"Headers\": {\n      \"type\": [\"object\", \"null\"],\n      \"description\": \"HTTP request headers. Will consist of (key,value) and (key, list of value) pairs\"\n    },\n    \"Body\": {\n      \"type\": [\"string\", \"null\"],\n      \"description\": \"HTTP request body\"\n    },\n    \"RequestHasBytes\": {\n      \"type\": [\"boolean\", \"null\"],\n      \"description\": \"Whether to send body as bytes. Base64 encoded string needs to be provided in Body parameter\",\n      \"default\": false\n    },\n    \"ResponseHasBytes\": {\n      \"type\": [\"boolean\", \"null\"],\n      \"description\": \"Whether to receive body as bytes. Base64 encoded string will be sent in the response body\",\n      \"default\": false\n    },\n    \"HttpVersion\": {\n      \"type\": [\"string\", \"null\"],\n      \"description\": \"HTTP Version to be used while making the request. Supported values are 1.1 and 2. If Version 2 is selected, ALPN negotiation will take place and version 1.1 will be used if server does not support version 2\",\n      \"default\": \"2\"\n    },\n    \"ResponseFormat\": {\n      \"type\": [\"string\", \"null\"],\n      \"description\": \"Format to be used for the response. Allowed values are v1 and v2. Using v2 will return the flattened list\",\n      \"default\": \"v1\"\n    },\n    \"FailOnError\": {\n      \"type\": [\"boolean\", \"null\"],\n      \"description\": \"Task should fail if HTTP response status code is 4xx or 5xx\",\n      \"default\": true\n    }\n  }\n}"
+		},
+		{
+			"key": "response",
+			"dataType": "STRING_VALUE",
+			"defaultValue": {
+				"stringValue": ""
+			},
+			"inputOutputType": "OUT"
+		}
+	],
+	"databasePersistencePolicy": "",
+	"cloudLoggingDetails": {
+		"cloudLoggingSeverity": "",
+		"enableCloudLogging": false
+	}
+}
