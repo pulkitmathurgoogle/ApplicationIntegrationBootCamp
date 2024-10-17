@@ -21,7 +21,7 @@ The Cloud Run Service will be exposed using a Serverless NEG and then a PSC Serv
 
 1. Clone this repo
 ```sh
-cd demos/http-psc-demo
+cd labs/http-psc-demo
 ```
 2. Update env.sh and run
 
