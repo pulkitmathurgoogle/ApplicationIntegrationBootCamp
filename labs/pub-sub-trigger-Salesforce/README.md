@@ -55,7 +55,7 @@ To add a Cloud Pub/Sub trigger to the integration, follow the steps below:
 
 ## Create the Salesforce connector
 
-1. Go to "Secrets Manager" and create two secrets, sfdc-password and sfdc-secret with the values provided by the instructor.
+1. Go to "Secrets Manager" and create two secrets, sfdcsecret and sfdctoken with the values provided by the instructor.
 ![alt text](images/createsecret.png)
 2. Add a connector task and click "Configure Connector"
 ![alt text](images/configureconnector.png)
