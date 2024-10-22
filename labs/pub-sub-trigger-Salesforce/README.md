@@ -22,7 +22,7 @@ Ensure your IAM user has the following GCP roles/permissions in your Google Clou
 For this lab, we will create a Pub/Sub topic that receives temperature readings in degrees Kelvin from an IOT device. This quickstart tests the integration's ability to listen to the topic and perform tasks when triggered.
 1.  Go to the Pub/Sub topics page in the Cloud console
 2.  Click Create a topic. 
-3.  In the Topic ID field, provide a unique topic name. e.g <prefix>-appintlab. The prefix could be your username, ldap, initials, etc
+3.  In the Topic ID field, provide a unique topic name.
 4.  Click Create
 
 ![alt text](images/pubsubtopic.png)
@@ -61,7 +61,7 @@ To add a Cloud Pub/Sub trigger to the integration, follow the steps below:
 ![alt text](images/configureconnector.png)
 3. Click "Create Connection" and select Salesforce.
 ![alt text](images/createconnection.png)
-4. The final connection should look like this(uset the username provided the instructor and the secrets created previously):
+4. The final connection should look like this(use the username provided the instructor and the secrets created previously):
 ![alt text](images/connectiondetails.png)
 5. Go back to the integration, select the connector and click "Configure connector" again. This time, select the connector just created and configure it as follows:
 ![alt text](images/connectorconfig.png)
@@ -88,11 +88,11 @@ To add a Cloud Pub/Sub trigger to the integration, follow the steps below:
 To test the new integration from the Pub/Sub topics page, do the following steps:
 - Go to the Pub/Sub topics page in the Cloud console
 - Search for and then select the topic that you created.
-- From the topic details page, click + Publish Message to open the Publish Message configuration pane.
+- From the "MESSAGES" section of the topic details page, click + Publish Message to open the Publish Message configuration pane.
 - In the Message body field, enter:
   {
-    "Name": "Samuel",
-    "LastName": "Jackson"
+    "Name": "<yourfirstname>",
+    "LastName": "<yourlastname>"
   }
 - Click Publish to publish the message to the topic and trigger your integration.
 
