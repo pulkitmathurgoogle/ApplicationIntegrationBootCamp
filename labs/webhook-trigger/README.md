@@ -26,7 +26,7 @@ To configure the Webhook trigger using a new Webhook connection, perform the fol
 5. Complete the following steps in the Create Connection pane:
    1. In the Connection Details section, complete the following:
       1. **Connector version:** Select the Connector version from the drop down list of available versions.
-      2. **Connection Name:** Enter a name `<prefix>-webook-connection` for the Connection instance
+      2. **Connection Name:** Enter a name `<prefix>-webhook-connection` for the Connection instance
       3. **Description:** Optionally, enter a description for the connection instance.
       4. **Service Account:** Select a service account that has the [required roles](https://cloud.google.com/application-integration/docs/configure-webhook-trigger#before-you-begin).
       5. **Event Subscription:** Event subscription will be enabled by default and is mandatory for webhook connector
