@@ -20,7 +20,7 @@ The current permissions for the user can be seen in the below screenshot:
 
 Create an integration with the name starting with "fn", such as "fn-servicenow-salesforce" and an integration whose name does not start with "fn", such as "ServicenowEnrichment".
 
-![alt text](images/integrations.png)
+![alt text](images/Integrations.png)
 
 ## Create a new IAM policy
 
@@ -40,6 +40,9 @@ Create a new integration by  performing the following steps:
 resource.name.startsWith("projects/<project>/locations/<location>/integrations/fn") ||
 resource.type == "integrations.googleapis.com/Location" ||
 resource.type == "cloudresourcemanager.googleapis.com/Project"
+
+Sometimes the IAM conditions take a moment to propagate. After creating the IAM condition, close the browser tab and open another browser tab before proceeding with the lab or perform a hard-refresh on the browser tab.
+
 
 ![alt text](images/IAMconditioncontent.png)
 
