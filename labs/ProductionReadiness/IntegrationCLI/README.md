@@ -62,7 +62,9 @@ Click on "Cloud Shell" on the top right corner of the browser tab, which opens c
 
 Run the following commands in Cloud Shell:
 
-```curl -L https://raw.githubusercontent.com/GoogleCloudPlatform/application-integration-management-toolkit/main/downloadLatest.sh | sh -
+```
+
+curl -L https://raw.githubusercontent.com/GoogleCloudPlatform/application-integration-management-toolkit/main/downloadLatest.sh | sh -
 
 export PATH=$PATH:$HOME/.integrationcli/bin 
 
@@ -87,7 +89,8 @@ Now, we are going to scaffold the integration we previously created, i.e., we ar
 
 First, create a directory in which the integration "callURL" will be downloaded.
 
-``` mkdir callURL
+``` 
+mkdir callURL
 ```
 
 The next command will scaffold the integration. The first parameter, -n, denotes the name of the integration to be scaffolded. The second parameter, -s, denotes the version of the integration to be scaffolded. The third parameter, -f, denotes the folder where the integration would be scaffolded. The fourth parameter, -e, denotes the environment which are scaffolding the integration from. Here the value is "dev", which denotes that we are scaffolding the integration from the development environment, i.e. all configurations are related to the development environment.
