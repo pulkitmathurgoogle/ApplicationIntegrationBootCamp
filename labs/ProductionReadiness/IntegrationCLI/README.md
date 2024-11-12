@@ -95,7 +95,8 @@ mkdir callURL
 
 The next command will scaffold the integration. The first parameter, -n, denotes the name of the integration to be scaffolded. The second parameter, -s, denotes the version of the integration to be scaffolded. The third parameter, -f, denotes the folder where the integration would be scaffolded. The fourth parameter, -e, denotes the environment which are scaffolding the integration from. Here the value is "dev", which denotes that we are scaffolding the integration from the development environment, i.e. all configurations are related to the development environment.
 
-```integrationcli integrations scaffold -n callURL -s 1 -f callURL -e dev
+```
+integrationcli integrations scaffold -n callURL -s 1 -f callURL -e dev
 ```
 
 A folder structure would be created in the directory "callURL". Explore the folder structure to see the various files and the properties that can modified within these files. In this lab, we will change the value of the URL in the REST task for the "QA" version of the integration.
@@ -103,9 +104,11 @@ A folder structure would be created in the directory "callURL". Explore the fold
 To create properties for the QA version of the integration, we have to create a "QA" folder to house the QA properties similar to the "Dev" folder.
 
 Perform the folowing commands:
+```
 cd callURL
 cp -r dev qa
 vim qa/config-variables/callURL-config.json
+```
 
 Insert the new value of the config variable for QA, i.e. "https://mocktarget.apigee.net/echo". The complete content of the file should be: "`CONFIG_URL`": "https://mocktarget.apigee.net/echo"
 
@@ -114,7 +117,9 @@ Save and return back to the command prompt.
 Now, we are ready to deploy the integration to our "QA" environment. In the real world, the QA environment would be another GCP project, thus you would set the value of the project again and update integrationcli preferences to use the new project value, but in this lab, we are working with just one GCP project, thus we will not do that. We would deploy the QA version of the integration in the same project where we developed the Dev version in, which means that the Dev version will be overwritten with the QA version of the integration. 
 
 Run the following command:
+```
 integrationcli integrations apply -f . -e qa --wait=true
+```
 
 Go to the integration console, validate that the integration has been published very recently, and test the integration flow again. In the logs, the QA URL should be visible confirming that the deployment occured successfully.
 
