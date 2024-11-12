@@ -62,13 +62,19 @@ Click on "Cloud Shell" on the top right corner of the browser tab, which opens c
 
 Run the following commands in Cloud Shell:
 
-curl -L https://raw.githubusercontent.com/GoogleCloudPlatform/application-integration-management-toolkit/main/downloadLatest.sh | sh -
-export PATH=$PATH:$HOME/.integrationcli/bin
+```curl -L https://raw.githubusercontent.com/GoogleCloudPlatform/application-integration-management-toolkit/main/downloadLatest.sh | sh -
+export PATH=$PATH:$HOME/.integrationcli/bin 
+
 integrationcli --version
+
 token=$(gcloud auth print-access-token)
+
 project=<your_project_id>
+
 region=<region_in_which_you_configured_Application_Integration>
-integrationcli prefs set -p $project -r $region -t $token
+
+integrationcli prefs set -p $project -r $region -t $token 
+```
 
 Your outputs should be as seen in the screenshot below:
 
@@ -78,13 +84,15 @@ Your outputs should be as seen in the screenshot below:
 
 Now, we are going to scaffold the integration we previously created, i.e., we are going to download the integration and all related artifacts in a pre-determined format.
 
-First, creates a directory in which the integration "callURL" will be downloaded.
+First, create a directory in which the integration "callURL" will be downloaded.
 
-mkdir callURL
+``` mkdir callURL
+```
 
 The next command will scaffold the integration. The first parameter, -n, denotes the name of the integration to be scaffolded. The second parameter, -s, denotes the version of the integration to be scaffolded. The third parameter, -f, denotes the folder where the integration would be scaffolded. The fourth parameter, -e, denotes the environment which are scaffolding the integration from. Here the value is "dev", which denotes that we are scaffolding the integration from the development environment, i.e. all configurations are related to the development environment.
 
-integrationcli integrations scaffold -n callURL -s 1 -f callURL -e dev
+```integrationcli integrations scaffold -n callURL -s 1 -f callURL -e dev
+```
 
 A folder structure would be created in the directory "callURL". Explore the folder structure to see the various files and the properties that can modified within these files. In this lab, we will change the value of the URL in the REST task for the "QA" version of the integration.
 
