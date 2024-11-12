@@ -63,6 +63,7 @@ Click on "Cloud Shell" on the top right corner of the browser tab, which opens c
 Run the following commands in Cloud Shell:
 
 ```curl -L https://raw.githubusercontent.com/GoogleCloudPlatform/application-integration-management-toolkit/main/downloadLatest.sh | sh -
+
 export PATH=$PATH:$HOME/.integrationcli/bin 
 
 integrationcli --version
