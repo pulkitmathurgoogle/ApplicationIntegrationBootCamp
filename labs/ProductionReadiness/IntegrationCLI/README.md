@@ -114,7 +114,7 @@ Insert the new value of the config variable for QA, i.e. "https://mocktarget.api
 
 Save and return back to the command prompt. 
 
-Now, we are ready to deploy the integration to our "QA" environment. In the real world, the QA environment would be another GCP project, thus you would set the value of the project again and update integrationcli preferences to use the new project value, but in this lab, we are working with just one GCP project, thus we will not do that. We would deploy the QA version of the integration in the same project where we developed the Dev version in, which means that the Dev version will be overwritten with the QA version of the integration. 
+Now, we are ready to deploy the integration to our "QA" environment. In the real world, the QA environment would be another GCP project, thus you would set the value of the project again and update integrationcli preferences to use the new project value. However,in this lab, we are working with just one GCP project, thus we will not do that. We would deploy the QA version of the integration in the same project where we developed the Dev version in, which means that the Dev version will be overwritten with the QA version of the integration. 
 
 Run the following command:
 ```
