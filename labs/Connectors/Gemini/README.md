@@ -86,7 +86,7 @@ In the input for the second row, concatenate the following:
 
 Now let's configure the outputs. Drag and drop the "connectorInputPayload->Path parameterers->model" to the first row output. Drag and drop the "connectorInputPayload->RequestBody->contents" to the second row output.
 
-![alt text](images/FinalDataMapping.png)
+![alt text](images/FinaldataMapping.png)
 
 Exit the data mapper
 
