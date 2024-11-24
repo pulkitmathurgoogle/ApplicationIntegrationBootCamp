@@ -1,8 +1,23 @@
-# Webhook Trigger
+# Gemini/Vertex AI
 
-In this demo, we will use the Vertex AI trigger to call Gemini with a prompt.
+In this demo, we will use the Vertex AI connector to call Gemini with a prompt.
 
-## Create Webhook Trigger
+## Pre-Requisites
+
+Enable VertexAI in your project. Search for "Vertex AI" in the top-search bar, click on "Vertex AI" from the search results, and enable the APIs. The final result should look like the below:
+
+![alt text](images/VertexAIAPIs.png)
+
+Secondly, the service account you would use in the connectors must have access to vertexAI to provide authentication. Search "IAM" in the top-search bar, click on "IAM" in the search results, open th IAM home page. Identify the service account planned to be used, and click on "Edit Principal" at the right. 
+
+![alt text](images/EditServiceAccount.png)
+
+Search for the role "vertex AI user", add it to the principal and click "Save".
+
+![alt text](images/EditServiceAccount2.png)
+
+
+## Create Integration
 
 1. In the Google Cloud console, go to the Application Integration page. [Go to Application Integration](https://console.cloud.google.com/integrations)
 2. In the navigation menu, click Integrations. The Integrations List page appears listing all the integrations available in the Google Cloud project.
@@ -10,7 +25,9 @@ In this demo, we will use the Vertex AI trigger to call Gemini with a prompt.
 
 ![alt text](images/CreateIntegration.png)
 
-To configure the **VertexAI Connector**, drag and drop the vertex AI connctor from the "TASKS" dropdown and click "Configure Connector".
+To configure the **VertexAI Connector**, drag and drop the vertex AI connector from the "TASKS" dropdown and click "Configure Connector".
+![alt text](images/VertexAIConnector.png)
+
 
 ## Configure the Vertex AI Connection
 
@@ -42,13 +59,16 @@ Back in the integration canvas, drag and drop an API trigger and a "Data Mapping
 Open the "Data Mapping task". Create two variable as shown in the screenshots:
 ![alt text](images/CreateIntegration2.png)
 ![alt text](images/CreateIntegration4.png)
-The value for the "model" variable is "projects/<project_id>/locations/europe-west4/publishers/google/models/gemini-1.5-pro". In this example, we are using Gemini, however, you can choose any model deployed on Vertex AI.
+The value for the "model" variable is 
+```
+projects/<project_id>/locations/<region>/publishers/google/models/gemini-1.5-pro
+```
+In this example, we are using Gemini, however, you can choose any model deployed on Vertex AI.
 
-Drag and drop the "connectorInputPayload->Path parameterers->model" to the first row output. Drag and drop the "connectorInputPayload->RequestBody->contents" to the second row output.
-![alt text](images/CreateIntegration3.png)
 
-Now, let's configure the inputs.
-In the input for the first row, drag and drop the "model variable". 
+
+Let's configure the inputs.
+In the input for the first row, drag and drop the "model variable" created recently. 
 In the input for the second row, concatenate the following: 
 1. [{"role": "user","parts": [{"text": " (note: the string is not enclosed by quotation marks, copy and paste the exact string)
 ![alt text](images/Mapping1.png)
@@ -64,7 +84,11 @@ In the input for the second row, concatenate the following:
 
 ![alt text](images/Mapping5.png)
 
-5. Exit the data mapper
+Now let's configure the outputs. Drag and drop the "connectorInputPayload->Path parameterers->model" to the first row output. Drag and drop the "connectorInputPayload->RequestBody->contents" to the second row output.
+
+![alt text](images/CreateIntegration3.png)
+
+Exit the data mapper
 
 ## Configure the Response from Gemini
 
@@ -89,3 +113,22 @@ local geminiOutput = std.parseJson(std.extVar('`Task_1_connectorOutputPayload`')
 }
 
 ```
+
+The integration should look like this:
+
+![alt text](images/FinalIntegration.png)
+
+Click "Publish" to publish the integration
+
+## Test the integration
+
+Provide a prompt in the input, for example, "Is it a good idea to visit Amsterdam In the winters?"
+
+Click "Test"
+
+
+![alt text](images/Test1.png)
+
+Gemini provides a response, which can be seen in the integration logs
+
+![alt text](images/Test2.png)
