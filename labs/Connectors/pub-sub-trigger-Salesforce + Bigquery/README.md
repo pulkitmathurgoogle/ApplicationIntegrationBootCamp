@@ -72,10 +72,12 @@ To test the new integration from the Pub/Sub topics page, do the following steps
 - Search for and then select the topic that you created.
 - From the "MESSAGES" section of the topic details page, click + Publish Message to open the Publish Message configuration pane.
 - In the Message body field, enter:
+```
   {
     "Name": "<yourfirstname>",
     "LastName": "<yourlastname>"
   }
+```
 - Click Publish to publish the message to the topic and trigger your integration.
 
 ![alt text](images/pubsubtest.png)
