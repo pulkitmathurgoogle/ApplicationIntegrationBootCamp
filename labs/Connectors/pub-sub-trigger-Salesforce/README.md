@@ -77,9 +77,9 @@ To add a Cloud Pub/Sub trigger to the integration, follow the steps below:
       - Expand the CloudPubSubMessage JSON variable in the Variables list and drag the CloudPubSubMessage.data variable to the first Input row
       - Click + (Add a function) next to the CloudPubSubMessage.data variable to view the drop-down list of available functions
       - Select TO_JSON() to convert the CloudPubSubMessage.data value to a JSON and add the function GET_PROPERTY
-      - Click `Variable or Value` and then click `Value` section on the left. Now select "String" from the drop down and Enter `Name` as the value. This is to extract the Name value from the JSON we well get from the pub/sub topic
+      - Click `Variable or Value` and then click `Value` section on the left. Now select "String" from the drop down and Enter `Name` as the value. This is to extract the Name value from the JSON we will get from the pub/sub topic
         
-      - Click the first row in the Output column and drag and drop connctorInputPayload.FirstName
+      - Click the first row in the Output column and drag and drop connectorInputPayload.FirstName
       - Similarly, configure the LastName mapping
 ![alt text](images/datamapping.png)
 
@@ -90,13 +90,15 @@ To test the new integration from the Pub/Sub topics page, do the following steps
 - Search for and then select the topic that you created.
 - From the "MESSAGES" section of the topic details page, click + Publish Message to open the Publish Message configuration pane.
 - In the Message body field, enter:
+```
   {
     "Name": "<yourfirstname>",
     "LastName": "<yourlastname>"
   }
+  ```
 - Click Publish to publish the message to the topic and trigger your integration.
 
-![alt text](images/pubsubtest.png)
-
+![alt text](images/pubsubtest1.png)
+![alt text](images/pubsubtest2.png)
 Upon successful completion, the integration inserts a contact in Salesforce.
 
