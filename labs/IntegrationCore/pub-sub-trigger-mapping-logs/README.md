@@ -79,8 +79,8 @@ To add a Cloud Pub/Sub trigger to the integration, follow the steps below:
       - Click TO_STRING() to transform the data type of the variable from double to string
       - Click the second row in the Output column to create a new variable to hold the value of the transformed data. Complete the following fields:
         - Name: `prefix-TempinCelsiusString`
-        - Blank default value means: Select : ”Empty String”
         - Within the Variable Type drop-down select the “Output from Integration” option
+        - Blank default value means: Select : ”Empty String”
         - Click Create to create the variable and close the pane. The new variable will appear in the Variables list on the left side of the data mapping editor
       - Confirm your data mapping is as below and exit by clicking the `<-` button on the top left
         ![alt text](images/datamapping2.png)
