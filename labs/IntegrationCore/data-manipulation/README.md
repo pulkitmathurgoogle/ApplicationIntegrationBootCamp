@@ -174,12 +174,17 @@ Now let’s try using the Cloud Functions Task
    
     **NOTE:** DO NOT update the TriggerURL Parameter
 
-    | Parameter 1 | Parameter 2 |
-    |-------------|-------------|
-    | Key: **elevation** | Key: **geocode** |
-    | Type: **String** | Type: **String** |
-    | Value: **responseBody (Elevation API)** | Value: **responseBody (Geocoding API)** |
+    | Parameter 1                      | Parameter 2                      |
+    | -------------------------------- | -------------------------------- |
+    | Key: **elevation**               | Key: **geocode**                 |
+    | Type: **String**                 | Type: **String**                 |
+    | Value: Click variable and choose | Value: Click Variable and choose |
+    | ![alt text](image.png)           | ![alt text](image-1.png)         |
+    | ![alt text](image-3.png)         | ![alt text](image-2.png)         |
 
+   
+   Result should look like this:
+   
     ![alt text](images/CloudFunctions.png)
 
 
