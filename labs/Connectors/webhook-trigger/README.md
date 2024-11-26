@@ -50,7 +50,7 @@ To configure the Webhook trigger using a new Webhook connection, perform the fol
 6.  With the Connection created, let's provide the following configuration details in the Connector Event Trigger Editor page:
     1.  **Region:** Select the region of your Webhook connection.
     2.  **Connection:** Select the Webhook connection that you want to use. Application Integration only displays those Webhook connections that are active and have an event [subscription](https://cloud.google.com/integration-connectors/docs/eventsubscription) enabled.
-    3.  **Event subscription type:** Enter the type of event that you want to use to trigger the integration. Type `issues`
+    3.  **Custom Event type ID:** Enter the type of event that you want to use to trigger the integration. Type `issues`
     4.  **Service Account:** Select a service account with the [required IAM roles](https://cloud.google.com/application-integration/docs/configure-webhook-trigger#iam) for the Webhook trigger.
     5.  Press Done.
    
