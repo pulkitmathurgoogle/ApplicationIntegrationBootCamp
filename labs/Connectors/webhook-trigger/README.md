@@ -8,7 +8,7 @@ In this demo, we will use the Webhook Connector to trigger an integration.
 2. In the navigation menu, click Integrations. The Integrations List page appears listing all the integrations available in the Google Cloud project.
 3. Select an existing integration or click Create integration to create a new one. If you are creating a new integration:
    1. Enter a name `<prefix>-webhook-trigger` and description in the Create Integration pane
-   2. Select a region for the integration
+   2. Select a region for the integration, if asked.
    3. Click Create
 4. This opens the integration in the integration editor
 5. In the integration editor navigation bar, click Triggers to view the list of available triggers
