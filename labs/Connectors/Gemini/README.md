@@ -36,13 +36,16 @@ To configure the Vertex AI connection, perform the following steps
 ![alt text](images/ConnectorCreation1.png)
 
 2. Create the connection according to the information in the following screenshots:
+   
 ![alt text](images/ConnectorCreation2.png)
+
+BaseURL will be: `https://<your region>-aiplatform.googleapis.com/`
 ![alt text](images/ConnectorCreation3.png)
 Note: The hostname is https://yourregion-aiplatform.googleapis.com/
 ![alt text](images/ConnectorCreation4.png)
 ![alt text](images/ConnectorCreation5.png)
 
-3.  With the Connection created, let's create our integration flow
+1.  With the Connection created, let's create our integration flow
 
 Go back to the integration, and click "Configure Connector" again. 
 
@@ -50,6 +53,7 @@ Choose the newly created Vertex connection
 ![alt text](images/ConnectorCreation6.png)
 
 Configure the connection as per the follwoing screenshot:
+
 ![alt text](images/ConnectorCreation7.png)
 
 Back in the integration canvas, drag and drop an API trigger and a "Data Mapping" task into the canvas, and connect them, and change the connector taskname to "InvokeGemini"
