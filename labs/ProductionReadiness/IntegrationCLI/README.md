@@ -62,21 +62,21 @@ Click on "Cloud Shell" on the top right corner of the browser tab, which opens c
 
 Run the following commands in Cloud Shell:
 
-```
+```sh
+    curl -L https://raw.githubusercontent.com/GoogleCloudPlatform/application-integration-management-toolkit/main/downloadLatest.sh | sh -
 
-curl -L https://raw.githubusercontent.com/GoogleCloudPlatform/application-integration-management-toolkit/main/downloadLatest.sh | sh -
+    export PROJECT_ID=$(gcloud config get-value project)
+    export PATH=$PATH:$HOME/.integrationcli/bin 
 
-export PATH=$PATH:$HOME/.integrationcli/bin 
+    integrationcli --version
 
-integrationcli --version
+    token=$(gcloud auth print-access-token)
 
-token=$(gcloud auth print-access-token)
+    project=$PROJECT_ID
 
-project=<your_project_id>
+    region=<region_in_which_you_configured_Application_Integration>
 
-region=<region_in_which_you_configured_Application_Integration>
-
-integrationcli prefs set -p $project -r $region -t $token 
+    integrationcli prefs set -p $project -r $region -t $token 
 ```
 
 Your outputs should be as seen in the screenshot below:

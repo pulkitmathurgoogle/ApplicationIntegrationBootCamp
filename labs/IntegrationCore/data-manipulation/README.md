@@ -10,7 +10,7 @@ In this lab, we will explore different ways of handling the response and mashing
 1. Login to your GCP console, select your GCP project
 2. Enable the Google Maps API. Set the PROJECT_ID env variable
    ```sh
-    export PROJECT_ID=<project>
+    export PROJECT_ID=$(gcloud config get-value project)
     gcloud services enable \
     --project "$PROJECT_ID" \
     "elevation-backend.googleapis.com" \
