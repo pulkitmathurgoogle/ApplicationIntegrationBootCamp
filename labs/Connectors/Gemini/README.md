@@ -57,6 +57,7 @@ Configure the connection as per the follwoing screenshot:
 ![alt text](images/ConnectorCreation7.png)
 
 Back in the integration canvas, drag and drop an API trigger and a "Data Mapping" task into the canvas, and connect them, and change the connector taskname to "InvokeGemini"
+
 ![alt text](images/IntegrationCreation1.png)
 
 4.  Configure the Data Mapper
