@@ -71,9 +71,11 @@ To configure the Webhook trigger using a new Webhook connection, perform the fol
 
 8. Publish the Integration. Use curl to test it 
     ```sh
+    export URL=https://<your service URL>
+
     curl -X POST \
         -H "X-GitHub-Event: issues" \
-        https://YOUR_EVENT_LISTENER_URL \
+        "$URL" \
         -d '{"event_type" : "issue created"}'
     ```
 
