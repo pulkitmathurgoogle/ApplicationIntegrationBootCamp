@@ -212,7 +212,6 @@ Now let’s try using the Cloud Functions Task
         event.set('mashUpResponse', response);
 
         return
-
     ```
 
 8. Save and deploy the Cloud Function
@@ -222,3 +221,4 @@ Now let’s try using the Cloud Functions Task
 
 10. Delete the Data Transfomer Task
 11. Click Publish and Test the integration
+
