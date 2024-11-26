@@ -36,9 +36,10 @@ Create a new integration by  performing the following steps:
 2. In the navigation menu, click Integrations. The Integrations List page appears.
 3. Click **Create** integration.
 4. Enter a name and description in the Create Integration dialog. For example, `<prefix>-integration`. Replace the prefix with an appropriate value similar to the prefix you used in the above step while creating the Topic
-5. Select a region for the integration
+5. Select a region for the integration, if asked.
 6. Click Create to open the integration editor
-7. Enable logs to be sent to cloud logging by clicking on the gear icon ![alt text](images/gear_icon.png) at the top-right of the integration and a menu with integration details should appear as in the below screenshot
+7. Enable logs to be sent to cloud logging by clicking on the gear icon ![alt text](images/gear_icon.png) at the top-right of the integration and a menu with integration details should appear as in the below screenshot.
+   ![alt text](images/enable-cloud-logging.png)
 8. Drag the slider to the right to Enable Cloud Logging (to send Execution Logs to Cloud Logging)
 
 ## Create and Configure a Cloud Pub/Sub trigger
@@ -78,11 +79,14 @@ To add a Cloud Pub/Sub trigger to the integration, follow the steps below:
       - Click TO_STRING() to transform the data type of the variable from double to string
       - Click the second row in the Output column to create a new variable to hold the value of the transformed data. Complete the following fields:
         - Name: `prefix-TempinCelsiusString`
-        - Blank default value means: Select : ”Empty String”
         - Within the Variable Type drop-down select the “Output from Integration” option
+        - Blank default value means: Select : ”Empty String”
         - Click Create to create the variable and close the pane. The new variable will appear in the Variables list on the left side of the data mapping editor
       - Confirm your data mapping is as below and exit by clicking the `<-` button on the top left
         ![alt text](images/datamapping2.png)
+2. Click the back button to go back to the integration editor
+
+   ![alt text](images/back-to-int-editor.png)
 
 ## Creating a Send Email task
 
@@ -94,6 +98,7 @@ To configure the Send Email task:
    1. To Recipient(s): Enter your email address. You will use this email to confirm the successful completion of the integration.
    2. Subject: Enter Temperature in Celsius.
    3. Body in Plain Text: Select the prefix-TempInCelsiusString variable created earlier in the Data Mapping task.
+   ![alt text](images/TempInCelsiusString-var.png)
    4. The remaining options can be left in the default configuration.
 
 Add the required edge connections 
