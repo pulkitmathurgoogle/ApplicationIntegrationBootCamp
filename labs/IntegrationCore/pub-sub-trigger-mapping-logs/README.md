@@ -38,7 +38,8 @@ Create a new integration by  performing the following steps:
 4. Enter a name and description in the Create Integration dialog. For example, `<prefix>-integration`. Replace the prefix with an appropriate value similar to the prefix you used in the above step while creating the Topic
 5. Select a region for the integration, if asked.
 6. Click Create to open the integration editor
-7. Enable logs to be sent to cloud logging by clicking on the gear icon ![alt text](images/gear_icon.png) at the top-right of the integration and a menu with integration details should appear as in the below screenshot
+7. Enable logs to be sent to cloud logging by clicking on the gear icon ![alt text](images/gear_icon.png) at the top-right of the integration and a menu with integration details should appear as in the below screenshot. Click the Cloud logging switch to enable and then hit Save.
+   ![alt text](images/enable-cloud-logging.png)
 8. Drag the slider to the right to Enable Cloud Logging (to send Execution Logs to Cloud Logging)
 
 ## Create and Configure a Cloud Pub/Sub trigger
