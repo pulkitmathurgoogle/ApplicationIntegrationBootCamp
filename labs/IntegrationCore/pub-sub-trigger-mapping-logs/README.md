@@ -84,6 +84,9 @@ To add a Cloud Pub/Sub trigger to the integration, follow the steps below:
         - Click Create to create the variable and close the pane. The new variable will appear in the Variables list on the left side of the data mapping editor
       - Confirm your data mapping is as below and exit by clicking the `<-` button on the top left
         ![alt text](images/datamapping2.png)
+2. Click the back button to go back to the integration editor
+
+   ![alt text](images/back-to-int-editor.png)
 
 ## Creating a Send Email task
 
