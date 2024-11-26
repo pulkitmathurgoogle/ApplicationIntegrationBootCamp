@@ -8,7 +8,7 @@ In this demo, we will use the Webhook Connector to trigger an integration.
 2. In the navigation menu, click Integrations. The Integrations List page appears listing all the integrations available in the Google Cloud project.
 3. Select an existing integration or click Create integration to create a new one. If you are creating a new integration:
    1. Enter a name `<prefix>-webhook-trigger` and description in the Create Integration pane
-   2. Select a region for the integration
+   2. Select a region for the integration, if asked.
    3. Click Create
 4. This opens the integration in the integration editor
 5. In the integration editor navigation bar, click Triggers to view the list of available triggers
@@ -50,7 +50,7 @@ To configure the Webhook trigger using a new Webhook connection, perform the fol
 6.  With the Connection created, let's provide the following configuration details in the Connector Event Trigger Editor page:
     1.  **Region:** Select the region of your Webhook connection.
     2.  **Connection:** Select the Webhook connection that you want to use. Application Integration only displays those Webhook connections that are active and have an event [subscription](https://cloud.google.com/integration-connectors/docs/eventsubscription) enabled.
-    3.  **Event subscription type:** Enter the type of event that you want to use to trigger the integration. Type `issues`
+    3.  **Custom Event type ID:** Enter the type of event that you want to use to trigger the integration. Type `issues`
     4.  **Service Account:** Select a service account with the [required IAM roles](https://cloud.google.com/application-integration/docs/configure-webhook-trigger#iam) for the Webhook trigger.
     5.  Press Done.
    
@@ -71,9 +71,11 @@ To configure the Webhook trigger using a new Webhook connection, perform the fol
 
 8. Publish the Integration. Use curl to test it 
     ```sh
+    export URL=https://<your service URL>
+
     curl -X POST \
         -H "X-GitHub-Event: issues" \
-        https://YOUR_EVENT_LISTENER_URL \
+        "$URL" \
         -d '{"event_type" : "issue created"}'
     ```
 

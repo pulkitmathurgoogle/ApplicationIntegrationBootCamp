@@ -35,7 +35,7 @@ For this lab, we will create a Pub/Sub topic
 
     ```sh
     export PREFIX=<prefix>
-    export PROJECT_ID=<project>
+    export PROJECT_ID=$(gcloud config get-value project)
     export REGION=<region>
     ```
 
