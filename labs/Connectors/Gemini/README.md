@@ -100,7 +100,11 @@ Exit the data mapper
 In the integration flow canvas, create a variable called "Output". It will hold the output from Gemini and return the output back to the caller of the integration
 ![alt text](images/CreateIntegration6.png)
 
-To parse Gemini's response, we will use the "Data Transformer" task. Drag and drop a "Data Transformer" task and connect it at the end.
+To parse Gemini's response, we will use the "Data Transformer" task. 
+
+Drag and drop a "Data Transformer" task and connect it at the end.
+
+![alt text](images/CreateIntegration6a.png)
 
 Open the "Data Transformer" task, click "Script" at the top-right corner, delete the existing script, and paste the following:
 
