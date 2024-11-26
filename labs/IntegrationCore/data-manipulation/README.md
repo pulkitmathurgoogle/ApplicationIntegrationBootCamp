@@ -188,25 +188,26 @@ Now let’s try using the Cloud Functions Task
     import json
 
     def run(event):
-    
-    geocodeInput = json.loads(event.get('geocode'))
-    elevationInput = json.loads(event.get('elevation'))
 
-    response = {
-        "address": geocodeInput["results"][0]["formatted_address"],
-        "elevation": {
-            "meters": elevationInput["results"][0]["elevation"],
-            "feet": elevationInput["results"][0]["elevation"] * 3.2808399
-        },
-        "location": {
-            "latitude": geocodeInput["results"][0]["geometry"]["location"]["lat"],
-            "longitude": geocodeInput["results"][0]["geometry"]["location"]["lng"]
+        geocodeInput = json.loads(event.get('geocode'))
+        elevationInput = json.loads(event.get('elevation'))
+
+        response = {
+            "address": geocodeInput["results"][0]["formatted_address"],
+            "elevation": {
+                "meters": elevationInput["results"][0]["elevation"],
+                "feet": elevationInput["results"][0]["elevation"] * 3.2808399
+            },
+            "location": {
+                "latitude": geocodeInput["results"][0]["geometry"]["location"]["lat"],
+                "longitude": geocodeInput["results"][0]["geometry"]["location"]["lng"]
+            }
         }
-    }
 
-    event.set('mashUpResponse' , response);
+        event.set('mashUpResponse', response);
 
-    return
+        return
+
     ```
 
 8. Save and deploy the Cloud Function
@@ -214,4 +215,5 @@ Now let’s try using the Cloud Functions Task
 
     ![alt text](images/CloudFunctions2.png)
 
-10. Click Publish and Test the integration
+10. Delete the Data Transfomer Task
+11. Click Publish and Test the integration
