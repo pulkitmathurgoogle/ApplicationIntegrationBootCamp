@@ -189,24 +189,24 @@ Now let’s try using the Cloud Functions Task
 
     def run(event):
     
-    geocodeInput = json.loads(event.get('geocode'))
-    elevationInput = json.loads(event.get('elevation'))
-
-    response = {
-        "address": geocodeInput["results"][0]["formatted_address"],
-        "elevation": {
-            "meters": elevationInput["results"][0]["elevation"],
-            "feet": elevationInput["results"][0]["elevation"] * 3.2808399
-        },
-        "location": {
-            "latitude": geocodeInput["results"][0]["geometry"]["location"]["lat"],
-            "longitude": geocodeInput["results"][0]["geometry"]["location"]["lng"]
-        }
-    }
-
-    event.set('mashUpResponse' , response);
-
-    return
+       geocodeInput = json.loads(event.get('geocode'))
+       elevationInput = json.loads(event.get('elevation'))
+   
+       response = {
+           "address": geocodeInput["results"][0]["formatted_address"],
+           "elevation": {
+               "meters": elevationInput["results"][0]["elevation"],
+               "feet": elevationInput["results"][0]["elevation"] * 3.2808399
+           },
+           "location": {
+               "latitude": geocodeInput["results"][0]["geometry"]["location"]["lat"],
+               "longitude": geocodeInput["results"][0]["geometry"]["location"]["lng"]
+           }
+       }
+   
+       event.set('mashUpResponse' , response);
+   
+       return
     ```
 
 8. Save and deploy the Cloud Function
