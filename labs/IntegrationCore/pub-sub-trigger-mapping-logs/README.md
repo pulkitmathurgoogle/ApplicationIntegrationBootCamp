@@ -98,6 +98,7 @@ To configure the Send Email task:
    1. To Recipient(s): Enter your email address. You will use this email to confirm the successful completion of the integration.
    2. Subject: Enter Temperature in Celsius.
    3. Body in Plain Text: Select the prefix-TempInCelsiusString variable created earlier in the Data Mapping task.
+   ![alt text](images/TempInCelsiusString-var.png)
    4. The remaining options can be left in the default configuration.
 
 Add the required edge connections 
