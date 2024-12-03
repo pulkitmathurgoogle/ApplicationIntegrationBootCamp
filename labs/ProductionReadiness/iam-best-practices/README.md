@@ -36,10 +36,11 @@ Create a new integration by  performing the following steps:
 ![alt text](images/addIAMcondition.png)
 
 4. On the next page, create the IAM condition as follows:
-
+```
 resource.name.startsWith("projects/<project>/locations/<location>/integrations/fn") ||
 resource.type == "integrations.googleapis.com/Location" ||
 resource.type == "cloudresourcemanager.googleapis.com/Project"
+```
 
 Sometimes the IAM conditions take a moment to propagate. After creating the IAM condition, close the browser tab and open another browser tab before proceeding with the lab or perform a hard-refresh on the browser tab.
 
