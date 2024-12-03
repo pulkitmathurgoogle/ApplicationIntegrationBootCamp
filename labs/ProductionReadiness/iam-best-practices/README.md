@@ -16,13 +16,13 @@ The current permissions for the user can be seen in the below screenshot:
 
 ![alt text](images/originalpermissions.png)
 
-## Create an IAM condition
+## Create some test integrations
 
 Create an integration with the name starting with "fn", such as "fn-servicenow-salesforce" and an integration whose name does not start with "fn", such as "ServicenowEnrichment".
 
 ![alt text](images/Integrations.png)
 
-## Create a new IAM policy
+## Create a new IAM condition 
 
 Create a new integration by  performing the following steps:
 
@@ -47,10 +47,12 @@ Sometimes the IAM conditions take a moment to propagate. After creating the IAM 
 
 ![alt text](images/IAMconditioncontent.png)
 
-5. Go back to the Integrations and try to access the integration "ServiceNowEnrichment". The integration is not accessible, whereeas the integration "fn-servicenow-salesforce" is still accessible.
+## Test
+
+1. Go back to the Integrations and try to access the integration "ServiceNowEnrichment". The integration is not accessible, whereeas the integration "fn-servicenow-salesforce" is still accessible.
 
 ![alt text](images/IntegrationUnaccesible.png)
 
-6. Now, try creating an integration named "bigquery-to-salesforce", and you would receive an error about not having sufficient permissions. However, creating an integration called "fn-bigquery-to-salesforce" is possible according to the IAM condition created previoulsy.
+2. Now, try creating an integration named "bigquery-to-salesforce", and you would receive an error about not having sufficient permissions. However, creating an integration called "fn-bigquery-to-salesforce" is possible according to the IAM condition created previoulsy.
 
 ![alt text](images/CannotCreateIntegration.png)
