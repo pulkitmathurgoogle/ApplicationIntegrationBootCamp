@@ -13,6 +13,18 @@ You will create an integration with a JIRA trigger to get updates about a new JI
 Ensure your IAM user has the following GCP roles/permissions in your Google Cloud project.
 - Application Integration Invoker
 
+## Create an event subscription in the previously create JIRA connection
+
+The JIRA connection created previoulsy has to be enbaled with an event subscription.
+
+1. Go to the connections page, click the previouly created JIRA connection and click "EDIT at the top"
+![alt text](images/JIRAconnectionEdit.png)
+
+2. Scroll down to the "Event Subscription details" section and fill in the host, username and API Token.
+![alt text](images/JIRAEventSubscriptionDetails.png)
+
+3. Click "SAVE" at the bottom and wait for the connection to activate.
+
 ## Create a New Integration
 
 Create a new integration by  performing the following steps:
