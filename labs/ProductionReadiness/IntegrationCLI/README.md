@@ -62,7 +62,9 @@ Click on "Cloud Shell" on the top right corner of the browser tab, which opens c
 
 Run the following commands in Cloud Shell:
 
-```sh
+```
+    export INTEGRATIONCLI_VERSION=v0.80.1
+
     curl -L https://raw.githubusercontent.com/GoogleCloudPlatform/application-integration-management-toolkit/main/downloadLatest.sh | sh -
 
     export PROJECT_ID=$(gcloud config get-value project)
